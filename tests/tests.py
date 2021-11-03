@@ -2,8 +2,6 @@ import hashlib
 from unittest import TestCase
 from unittest.mock import patch
 
-from flake8.api import legacy as flake8
-
 from user import hasher, User
 
 
@@ -25,11 +23,3 @@ class UserTest(TestCase):
 
         user = User(self.username, self.password)
         self.assertEqual(user.password, hash)
-
-
-class CodeTest(TestCase):
-    def test_code(self):
-        style_guide = flake8.get_style_guide()
-        report = style_guide.check_files(['user'])
-
-        self.assertEqual(report.total_errors, 0)
