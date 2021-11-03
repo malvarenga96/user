@@ -1,0 +1,2 @@
+[flake8]
+exclude = user/__init__.py
